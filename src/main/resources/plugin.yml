@@ -1,0 +1,4 @@
+main: com.github.iamtakagi.tcore.Core
+name: tCore
+version: 1.0
+depend: [Honcho]

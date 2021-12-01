@@ -1,0 +1,63 @@
+CONFIG_VERSION: 1
+SERVER_NAME: "Hub"
+MONGO:
+  HOST: "127.0.0.1"
+  PORT: 27017
+  AUTHENTICATION:
+    ENABLED: false
+    USERNAME: ""
+    PASSWORD: ""
+REDIS:
+  HOST: "127.0.0.1"
+  PORT: 6379
+  AUTHENTICATION:
+    ENABLED: false
+    PASSWORD: ""
+SETTINGS:
+  UPDATE_PLAYER_LIST_NAME: true
+PUNISHMENTS:
+  BROADCAST: '&r{target} &ahas been {context} by &r{sender} for &r{reason}'
+  BROADCAST_SILENT: '&7[Silent] &r{target} &ahas been {context} by &r{sender} for &r{reason}'
+  BAN:
+    KICK: "&cYour account is {context} from Zonix.{temporary}\n\n&cIf you feel this packet is unjust, you may appeal at:\n&ehttps://www.zonix.com"
+    TEMPORARY: "\n&cThis rank expires in &e{time-remaining}&c."
+  KICK:
+    KICK: "&cYou were kicked by a staff member.\nReason: &e{reason}"
+COMMON_ERRORS:
+  FAILED_TO_LOAD_PROFILE: "&cFailed to load your profile. Try again later."
+  COULD_NOT_RESOLVE_PLAYER: "&cCould not resolve player information..."
+  PLAYER_NOT_FOUND: "&cA player with that name could not be found."
+  RANK_NOT_FOUND: "&cA rank with that name could not be found."
+STAFF:
+  CHAT: "{0}&r{1}&b ({2}): {3}"
+  BROADCAST_PREFIX: "&9&l[Staff] &r"
+  JOIN_NETWORK: "{0}{1} &ajoined the network &2({2})"
+  LEAVE_NETWORK: "{0}{1} &aleft the network"
+  SWITCH_SERVER: "{0}({1} &ajoined {2} &2(from {3})"
+NETWORK:
+  BROADCAST_PREFIX: "&8[&eNetwork&8] &f"
+  RANK_REFRESH: "{0}Refreshed rank \"{1}\""
+  RANK_DELETE: "{0}Deleted rank \"{1}\""
+CHAT:
+  FORMAT: "%1$s&r: %2$s"
+  CLEAR_CHAT_BROADCAST: "&eThe chat has been cleared by &r{0}"
+  CLEAR_CHAT_FOR_STAFF: false
+  MUTE_CHAT_BROADCAST: "&eThe chat has been {0} by &r{1}"
+  DELAY_CHAT_ENABLED_BROADCAST: "&eThe chat has been delayed by &r{0} &7({1} second{2})"
+  DELAY_CHAT_DISABLED_BROADCAST: "&eThe chat delay has been lifted by &r{0}"
+  CHAT_DELAYED: "&cSlow down! You may chat again in {0} seconds."
+# using both text formatter and text replacing because I need to escape colors in the input message
+# format: player name, player display name, player color, target name, target display name, target color
+CONVERSATION:
+  SEND_MESSAGE: "&7(To &r{5}{3}&7) %MSG%"
+  RECEIVE_MESSAGE: "&7(From &r{5}{3}&7) %MSG%"
+OPTIONS:
+  GLOBAL_CHAT_ENABLED: "&eYou can now see global chat."
+  GLOBAL_CHAT_DISABLED: "&cYou will no longer see global chat."
+  PRIVATE_MESSAGES_ENABLED: "&aYou can now receive new conversations."
+  PRIVATE_MESSAGES_DISABLED: "&cYou can no longer receive new conversations. If you start a conversation with a player, they will be able to message you back."
+  PRIVATE_MESSAGE_SOUNDS_ENABLED: "&eYou enabled private message sounds."
+  PRIVATE_MESSAGE_SOUNDS_DISABLED: "&cYou disabled private message sounds."
+SERVER_STATUS:
+  SERVERS:
+    #- Practice:127.0.0.1:25567

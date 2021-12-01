@@ -1,0 +1,4 @@
+# tCore
+
+## LICENCE
+MIT.
