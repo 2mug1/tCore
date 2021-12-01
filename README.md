@@ -14,7 +14,7 @@ The core plugin for Spigot. (Supports 1.8.8<=)
 - File / Config 
 - Menu (GUI)
 - NameTag
-- Redis PubSub Listener
+- Pidgin (Redis PubSub Listener)
 - Profile
 - Punishment
 - Server Status
@@ -25,6 +25,12 @@ The core plugin for Spigot. (Supports 1.8.8<=)
 - Redis Pool
 - Locale
 - Config
+- Clan
+- Exp Booster
+- Staff
+- Broadcast
+- NMS Reflection
+etc
 
 ## LICENCE
 MIT.
