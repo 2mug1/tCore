@@ -32,5 +32,17 @@ The core plugin for Spigot. (Supports 1.8.8<=)
 - NMS Reflection
 etc
 
+## データベース
+- MongoDB (Main Database)
+  - プレイヤーデータの保管等に使用
+- Redis (In-memory data structure store as database)
+  - サーバー間のデータ通信、キャッシュ等に使用
+
+## ライブラリ
+[./libs](./libs) 配下に置いてあるファイル全て
+
+## 依存関係
+[./pom.xml](./pom.xml) に記載
+ 
 ## LICENCE
 MIT.
