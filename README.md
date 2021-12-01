@@ -14,7 +14,7 @@ The core plugin for Spigot. (Supports 1.8.8<=)
 - File / Config 
 - Menu (GUI)
 - NameTag
-- Pidgin (Redis PubSub Listener)
+- Pidgin (Redis PubSup Listener)
 - Profile
 - Punishment
 - Server Status
