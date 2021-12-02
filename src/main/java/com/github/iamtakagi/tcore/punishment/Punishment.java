@@ -147,7 +147,7 @@ public class Punishment {
 
 		JsonParser jsonParser = new JsonParser();
 
-		for (Document document : Core.get().getDatabase().getProfiles().find()) {
+		for (Document document : Core.get().getDb().getProfiles().find()) {
 			JsonArray punishmentList = jsonParser.parse(document.getString("punishments")).getAsJsonArray();
 
 			for (JsonElement punishmentData : punishmentList) {
@@ -168,7 +168,7 @@ public class Punishment {
 
 		JsonParser jsonParser = new JsonParser();
 
-		for (Document document : Core.get().getDatabase().getProfiles().find()) {
+		for (Document document : Core.get().getDb().getProfiles().find()) {
 			size+=jsonParser.parse(document.getString("punishments")).getAsJsonArray().size();
 		}
 

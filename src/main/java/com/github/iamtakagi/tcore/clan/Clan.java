@@ -42,7 +42,7 @@ public class Clan {
     }
 
     private void load() {
-        Document document = Core.get().getDatabase().getClans().find(Filters.eq("name", name)).first();
+        Document document = Core.get().getDb().getClans().find(Filters.eq("name", name)).first();
 
         if (document == null) {
             save();
@@ -87,7 +87,7 @@ public class Clan {
 
         sortPlayersByRole();
 
-        Core.get().getDatabase().getClans().replaceOne(Filters.eq("name", name), document, new ReplaceOptions().upsert(true));
+        Core.get().getDb().getClans().replaceOne(Filters.eq("name", name), document, new ReplaceOptions().upsert(true));
     }
 
     public String getStyleTag(){
@@ -188,7 +188,7 @@ public class Clan {
     }
 
     public static Clan getByName(String clanName){
-        Document document = Core.get().getDatabase().getClans().find(Filters.eq("name", clanName)).first();
+        Document document = Core.get().getDb().getClans().find(Filters.eq("name", clanName)).first();
 
         if(document == null){
             return null;

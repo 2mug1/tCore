@@ -115,7 +115,7 @@ public class Rank {
 	}
 
 	public void load() {
-		load(Core.get().getDatabase().getRanks().find(Filters.eq("uuid", uuid.toString())).first());
+		load(Core.get().getDb().getRanks().find(Filters.eq("uuid", uuid.toString())).first());
 	}
 
 	private void load(Document document) {
@@ -156,7 +156,7 @@ public class Rank {
 				.map(UUID::toString)
 				.collect(Collectors.toList())));
 
-		Core.get().getDatabase().getRanks().replaceOne(Filters.eq("uuid", uuid.toString()), document,
+		Core.get().getDb().getRanks().replaceOne(Filters.eq("uuid", uuid.toString()), document,
 				new ReplaceOptions().upsert(true));
 
 		Core.get().getPidgin().sendPacket(new PacketRefreshRank(uuid, displayName));
@@ -164,7 +164,7 @@ public class Rank {
 
 	public void delete() {
 		ranks.remove(uuid);
-		Core.get().getDatabase().getRanks().deleteOne(Filters.eq("uuid", uuid.toString()));
+		Core.get().getDb().getRanks().deleteOne(Filters.eq("uuid", uuid.toString()));
 
 		Core.get().getPidgin().sendPacket(new PacketDeleteRank(uuid));
 	}
@@ -172,7 +172,7 @@ public class Rank {
 	public static void init() {
 		Map<Rank, List<UUID>> inheritanceReferences = new HashMap<>();
 
-		try (MongoCursor<Document> cursor = Core.get().getDatabase().getRanks().find().iterator()) {
+		try (MongoCursor<Document> cursor = Core.get().getDb().getRanks().find().iterator()) {
 			while (cursor.hasNext()) {
 				Document document = cursor.next();
 

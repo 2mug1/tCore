@@ -110,7 +110,7 @@ public class Core extends JavaPlugin {
 
 	private Pidgin pidgin;
 
-	private Database database;
+	private Database db;
 	private JedisPool jedisPool;
 	private RedisCache redisCache;
 
@@ -343,7 +343,7 @@ public class Core extends JavaPlugin {
 	}
 
 	private void loadMongo() {
-		database = new Database(mainConfig);
+		db = new Database(mainConfig);
 	}
 
 	private void loadRedis() {

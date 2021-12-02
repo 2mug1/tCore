@@ -90,7 +90,7 @@ public class Profile {
 
 	public void findAlternates() {
 		if (this.currentAddress != null) {
-			try (MongoCursor<Document> cursor = Core.get().getDatabase().getProfiles().find(Filters.eq("currentAddress", this.currentAddress)).iterator()) {
+			try (MongoCursor<Document> cursor = Core.get().getDb().getProfiles().find(Filters.eq("currentAddress", this.currentAddress)).iterator()) {
 				cursor.forEachRemaining(document -> {
 					final UUID uuid = UUID.fromString(document.getString("uuid"));
 
@@ -232,7 +232,7 @@ public class Profile {
 	}
 
 	public void load() {
-		Document document = Core.get().getDatabase().getProfiles().find(Filters.eq("uuid", uuid.toString())).first();
+		Document document = Core.get().getDb().getProfiles().find(Filters.eq("uuid", uuid.toString())).first();
 
 		if (document != null) {
 			if (username == null) {
@@ -411,7 +411,7 @@ public class Profile {
 
 		document.put("punishments", punishmentList.toString());
 
-		Core.get().getDatabase().getProfiles().replaceOne(Filters.eq("uuid", uuid.toString()), document, new ReplaceOptions().upsert(true));
+		Core.get().getDb().getProfiles().replaceOne(Filters.eq("uuid", uuid.toString()), document, new ReplaceOptions().upsert(true));
 	}
 
 	public String getFormattedName(){
@@ -461,7 +461,7 @@ public class Profile {
 		List<Profile> profiles = new ArrayList<>();
 		Bson filter = Filters.eq("currentAddress", ipAddress);
 
-		try (MongoCursor<Document> cursor = Core.get().getDatabase().getProfiles().find(filter).iterator()) {
+		try (MongoCursor<Document> cursor = Core.get().getDb().getProfiles().find(filter).iterator()) {
 			while (cursor.hasNext()) {
 				Document document = cursor.next();
 				profiles.add(new Profile(document.getString("username"),
