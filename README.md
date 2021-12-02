@@ -4,7 +4,8 @@ The core plugin for Spigot. (Supports 1.8.8<=)
 
 ## 動作環境
 - RageSpigot 1.8.8
-Spigot、PaperSpigot 等で動くかはわかりません。Bukkit は多分動きません。
+
+Spigot、Paper Spigot 等で動くかはわかりません。Bukkit は多分動きません。
 
 ## ビルド
 `mvn clean package && mvn clean install`
