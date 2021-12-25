@@ -186,7 +186,7 @@ public class Core extends JavaPlugin {
 				new RankSetSuffixCommand(),
 				new RankSetWeightCommand(),
 				new RankUninheritCommand(),
-				new SpicaDebugCommand(),
+				new DebugCommand(),
 				new TeleportWorldCommand(),
 				new MessageCommand(),
 				new ReplyCommand(),
